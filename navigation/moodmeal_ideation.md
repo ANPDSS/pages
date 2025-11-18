@@ -86,7 +86,7 @@ breadcrumb: True
 
 ---
 
-## Module 01 · User Accounts & Preferences
+## Module 01 · User Accounts & Preference
 
 <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:30px; margin:40px 0;">
   <div style="background:#2D4356; padding:32px; border-radius:18px; color:#F7EFE3;">
