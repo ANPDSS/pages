@@ -262,6 +262,7 @@ help:
 	@echo ""
 	@echo "Server Commands:"
 	@echo "  make serve          - Serve with current config"
+	@echo "  make serve-quick    - Serve WITHOUT notebook conversion (faster)"
 	@echo "  make build          - Build with current config"
 	@echo "  make stop           - Stop server and logging"
 	@echo "  make reload         - Stop and restart server"
@@ -291,3 +292,25 @@ convert-fix:
 	@echo "Running conversion fixes..."
 	@echo "️Fixing notebooks with known warnings or errors..."
 	@python3 scripts/check_conversion_warnings.py --fix
+
+# Quick serve without conversion (for faster startup)
+serve-quick: stop
+	@echo "Starting server WITHOUT notebook conversion (faster)..."
+	@@nohup env LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec jekyll serve -H $(HOST) -P $(PORT) > $(LOG_FILE) 2>&1 & \
+		PID=$$!; \
+		echo "Server PID: $$PID"
+	@@until [ -f $(LOG_FILE) ]; do sleep 1; done
+	@for ((COUNTER = 0; ; COUNTER++)); do \
+		if grep -q "Server address:" $(LOG_FILE); then \
+			echo "Server started in $$COUNTER seconds"; \
+			grep "Server address:" $(LOG_FILE); \
+			break; \
+		fi; \
+		if [ $$COUNTER -eq 120 ]; then \
+			echo "Server timed out after $$COUNTER seconds."; \
+			echo "Review errors from $(LOG_FILE)."; \
+			cat $(LOG_FILE); \
+			exit 1; \
+		fi; \
+		sleep 1; \
+	done
