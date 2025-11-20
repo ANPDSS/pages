@@ -1,0 +1,61 @@
+name: Create Full Roadmap
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_tasks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Complete Roadmap
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const projectId = 1; // <-- Replace
+
+            const tasks = [
+              { title: "Task 1 — Backend Infra Setup", labels: ["backend", "infra", "priority"], due: "2025-01-15" },
+              { title: "Task 2 — Backend Authentication", labels: ["backend"], due: "2025-01-25" },
+              { title: "Task 3 — Frontend Login UI", labels: ["frontend", "ui"], due: "2025-02-05" },
+              { title: "Task 4 — Pantry UI", labels: ["frontend", "ui"], due: "2025-02-18" },
+              { title: "Task 5 — Database Schema Design", labels: ["database"], due: "2025-02-28" },
+              { title: "Task 6 — API Endpoint Implementation", labels: ["backend", "feature"], due: "2025-03-05" },
+              { title: "Task 7 — UX Design Review", labels: ["design"], due: "2025-03-10" },
+              { title: "Task 8 — Recipe UI", labels: ["frontend", "ui"], due: "2025-03-20" },
+              { title: "Task 9 — Recommendation Logic", labels: ["backend", "feature"], due: "2025-03-22" },
+              { title: "Task 10 — Testing Setup", labels: ["testing"], due: "2025-03-28" },
+              { title: "Task 11 — Dashboard UI", labels: ["frontend", "ui"], due: "2025-04-01" },
+              { title: "Task 12 — Database Optimization", labels: ["database"], due: "2025-04-05" },
+              { title: "Task 13 — UI Polish", labels: ["design", "frontend"], due: "2025-04-10" },
+              { title: "Task 14 — API Tests", labels: ["testing"], due: "2025-04-12" },
+              { title: "Task 15 — Deployment Pipeline", labels: ["infra", "deployment"], due: "2025-04-15" },
+              { title: "Task 16 — Bug Fixing Sprint", labels: ["frontend", "testing"], due: "2025-04-20" },
+              { title: "Task 17 — Load Testing Database", labels: ["database", "testing"], due: "2025-04-25" },
+              { title: "Task 18 — Usability Pass", labels: ["design"], due: "2025-04-30" },
+              { title: "Task 19 — Final QA Review", labels: ["testing"], due: "2025-05-05" },
+              { title: "Task 20 — Launch Preparation", labels: ["deployment", "feature"], due: "2025-05-10" }
+            ];
+
+            for (const task of tasks) {
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: task.title,
+                body: "Auto-generated roadmap task.",
+                labels: task.labels
+              });
+
+              await github.rest.projectsV2.items.create({
+                project_id: projectId,
+                content_type: "Issue",
+                content_id: issue.data.id
+              });
+
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.data.number,
+                due_date: task.due
+              });
+            }
