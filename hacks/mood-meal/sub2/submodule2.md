@@ -2,7 +2,7 @@
 layout: post
 title: "Submodule 2"
 description: "bla bla bla"
-permalink: /awesomesauce2
+permalink: /mood-meal/submodule_2/
 parent: "cool"
 team: "ANDPDSS"
 microblog: True
@@ -12,6 +12,7 @@ tags: [mood-meal, submodule, cool]
 author: "ANPDSS"
 date: 2025-11-20
 footer:
+  previous: /mood-meal/submodule_1/
   home: /changethis
-  next: /changethistoo
+  next: /mood-meal/submodule_3/
 ---
