@@ -50,7 +50,5 @@ lxdData:
       Alt: "AI Key 4"
       RequiresLevel: 3
 footer:
-  previous: /mood-meal/
   home: /mood-meal/
-  next: /mood-meal/submodule_1/
 ---
