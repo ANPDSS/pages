@@ -13,6 +13,6 @@ author: "ANPDSS"
 date: 2025-11-20
 footer:
   previous: /mood-meal/submodule_5/
-  home: /changethis
-  next: /changethis
+  home: /mood-meal/
+  next: /mood-meal/
 ---

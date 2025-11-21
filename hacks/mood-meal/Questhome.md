@@ -5,7 +5,7 @@ title: AI Usage Quest
 description: >
   Learn to prompt AI to create your itinerary, data visualization, and learn about the core concepts and limitations of AI!
 author: CSP 2025-26
-permalink: /west-coast/ai/
+permalink: /mood-meal/
 lxdData:
   Title: "AI Usage Modules"
   Description: "Master AI tools, prompting techniques, and storage concepts for efficient development!"
@@ -49,4 +49,8 @@ lxdData:
       Image: "/images/WC_AI_Submodule4RM.png"
       Alt: "AI Key 4"
       RequiresLevel: 3
+footer:
+  previous: /mood-meal/
+  home: /mood-meal/
+  next: /mood-meal/submodule_1/
 ---

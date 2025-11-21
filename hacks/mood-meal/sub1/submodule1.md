@@ -12,7 +12,7 @@ tags: [mood-meal, submodule, cool]
 author: "ANPDSS"
 date: 2025-11-20
 footer:
-  previous: /changethis
-  home: /changethis
+  previous: /mood-meal/
+  home: /mood-meal/
   next: /mood-meal/submodule_2/
 ---
