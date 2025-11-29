@@ -18,8 +18,8 @@
 @import "natm-2025-tri1.scss";
 
 
-// Removed global background color override to allow minima theme to control it
-// The minima dark theme will handle body background colors
+html,
+body,
 input,
 textarea,
 select {
