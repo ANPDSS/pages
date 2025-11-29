@@ -14,5 +14,4 @@ date: 2025-11-20
 footer:
   previous: /mood-meal/submodule_5/
   home: /mood-meal/
-  next: /mood-meal/
 ---
