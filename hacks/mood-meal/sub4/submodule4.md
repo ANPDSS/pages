@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Submodule 4"
-description: "bla bla bla"
+description: "Recipe Viewer & Cooking Mode"
 permalink: /mood-meal/submodule_4/
 parent: "cool"
 team: "ANDPDSS"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Submodule 6"
-description: "bla bla bla"
+description: "Smart Shopping List Generator"
 permalink: /mood-meal/submodule_6/
 parent: "cool"
 team: "ANDPDSS"
