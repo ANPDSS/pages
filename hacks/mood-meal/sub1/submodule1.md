@@ -1,4 +1,22 @@
-<!DOCTYPE html>
+---
+layout: post
+title: "Submodule 1"
+description: "User Accounts & Preferences"
+permalink: /mood-meal/submodule_1/
+parent: "cool"
+team: "ANDPDSS"
+microblog: True
+submodule: 1
+categories: [CSP, Submodule, mood-meal]
+tags: [mood-meal, submodule, cool]
+author: "ANPDSS"
+date: 2025-11-20
+footer:
+  previous: /mood-meal/
+  home: /mood-meal/
+  next: /mood-meal/submodule_2/
+---
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
